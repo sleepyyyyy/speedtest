@@ -140,7 +140,7 @@ function initUI(){
 					type: "POST", 				//request type
 					data:{action: $("#ipaddress").val()},
 					success:function(result){
-						$("tracere").append(result);
+						alert(result);
 					}
 			});
 		});
@@ -337,7 +337,6 @@ function initUI(){
 	</div>
 	ip: <input type="text" id="ipaddress"><br/><br/>
     	<button type="submit" id="btn_submit"> test </button><br/><br/>
-	<tracere></tracere>
 	<br/><br/>
 	<a href="https://github.com/librespeed/speedtest">Source code</a>
 </div>
