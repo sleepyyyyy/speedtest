@@ -131,6 +131,21 @@ function initUI(){
 	I("ip").textContent="";
 }
 </script>
+<script src="https://cdn.jsdelivr.net/gh/jquery/jquery/dist/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('#btn_submit').click(function(){
+            		$.ajax({
+					url:"test.php", 			//the page containing php script
+					type: "POST", 				//request type
+					data:{action: $("#ipaddress").val()},
+					success:function(result){
+						$("tracere").append(result);
+					}
+			});
+		});
+        });
+</script>
 <style type="text/css">
 	html,body{
 		border:none; padding:0; margin:0;
@@ -320,6 +335,10 @@ function initUI(){
 			<img src="" id="resultsImg" />
 		</div>
 	</div>
+	ip: <input type="text" id="ipaddress"><br/><br/>
+    	<button type="submit" id="btn_submit"> test </button><br/><br/>
+	<tracere></tracere>
+	<br/><br/>
 	<a href="https://github.com/librespeed/speedtest">Source code</a>
 </div>
 <div id="privacyPolicy" style="display:none">
